@@ -10,4 +10,4 @@ To run the repository properly:
 
 To run the tests:
 
-1) Use 'npm run cypress-run' and see the results.
+1) Use 'npm run cypress-dev' or 'npm run cypress-run' and see the results.
