@@ -12,14 +12,7 @@ function configurarJuego() {
 }
 
 function manejarEventos($tablero) {
-
-  // $cuadros.forEach(function($cuadro){
-  //   $cuadro.onclick = function(){
-  //     manejarClickCuadro($cuadro);
-  //   }
-  // });
-
-  $tablero.onclick = function(e) {
+  $tablero.onclick = function (e) {
     const $elemento = e.target;
     if ($elemento.classList.contains('cuadro')) {
       manejarClickCuadro($elemento);
@@ -28,11 +21,11 @@ function manejarEventos($tablero) {
 }
 
 function configurarCuadros($cuadros, colores) {
-  const coloresRandom = colores.sort(function() {
+  const coloresRandom = colores.sort(function () {
     return 0.5 - Math.random();
   });
 
-  coloresRandom.forEach(function(color, i) {
+  coloresRandom.forEach(function (color, i) {
     $cuadros[i].classList.add(color);
   });
 }
@@ -63,15 +56,6 @@ function manejarClickCuadro($cuadroActual) {
 
 function cuadrosSonIguales($cuadro1, $cuadro2) {
   return $cuadro1.className === $cuadro2.className;
-
-  /*
-  //Este patrón siempre se puede simplificar:
-  if($cuadro1.className === $cuadro2.className){
-    return true;
-  }else{
-    return false;
-  }
-  */
 }
 
 function mostrarCuadro($cuadro) {
@@ -79,14 +63,14 @@ function mostrarCuadro($cuadro) {
 }
 
 function ocultarCuadro($cuadro) {
-  setTimeout(function() {
+  setTimeout(function () {
     $cuadro.style.opacity = '0';
   }, 500);
 
 }
 
 function eliminarCuadro($cuadro) {
-  setTimeout(function() {
+  setTimeout(function () {
     $cuadro.parentElement.classList.add('completo');
     $cuadro.remove();
     evaluarFinDeJuego();
@@ -97,7 +81,7 @@ function evaluarFinDeJuego() {
   if (document.querySelectorAll('.cuadro').length === 0) {
     $tablero.style.display = 'none';
     $mensajeFinJuego.querySelector('strong').textContent = turnos.toString();
-    $mensajeFinJuego.style.display = 'block';
+    $mensajeFinJuego.style.display = 'flex';
   }
 }
 

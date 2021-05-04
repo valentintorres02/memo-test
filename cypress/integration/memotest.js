@@ -18,7 +18,7 @@ context('Memotest', () => {
     it('se asegura que los cuadros sean aleatorios', () => {
       cy.get('.cuadro').then((cuadros) => {
         let clasesOriginales = [];
-        cuadros.each(function(i, cuadro) {
+        cuadros.each(function (i, cuadro) {
           clasesOriginales.push(cuadro.className);
         });
 
@@ -26,7 +26,7 @@ context('Memotest', () => {
 
         let clasesNuevas = [];
         cy.get('.cuadro').then(nuevosCuadros => {
-          nuevosCuadros.each(function(i, cuadro) {
+          nuevosCuadros.each(function (i, cuadro) {
             clasesNuevas.push(cuadro.className);
           });
 
@@ -63,10 +63,10 @@ context('Memotest', () => {
         cy.get('.tablero').should('not.be.visible');
         const numeroTurnos = NUMERO_CUADROS / 2 + 1; //porque se testeó 1 incorrecto.
         cy.get('#fin-juego').
-            should('be.visible').
-            contains(
-                `Fin del juego! Tardaste ${numeroTurnos} turnos en terminar`,
-            );
+          should('be.visible').
+          contains(
+            `¡You won! It took you ${numeroTurnos} times to finish`,
+          );
       });
     });
   });

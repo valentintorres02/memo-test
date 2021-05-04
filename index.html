@@ -7,68 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memotest</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/styles.css">
 
-    <style type="text/css">
-        body, html {
-            height: 100%;
-        }
-
-        .completo{
-            background: darkgrey;
-        }
-
-        .columna-juego{
-            border: 1px solid black;
-        }
-
-        .fila-juego {
-            /*Bootstrap viene con h-25... pero no con h-33!*/
-            height: 25vh;
-        }
-
-        .cuadro {
-            /* visibility no anda porque no tiene valores numéricos que se puedan incrementar o decrementar
-            visibility: hidden;
-            */
-            opacity: 0;
-            transition: opacity ease 0.2s;
-            border: 1px solid black;
-            cursor: pointer;
-        }
-
-        .rojo {
-            background-color: red;
-        }
-
-        .verde {
-            background-color: green;
-        }
-
-        .amarillo {
-            background-color: yellow;
-        }
-
-        .negro {
-            background-color: black;
-        }
-
-        .blanco {
-            background-color: white;
-        }
-
-        .azul {
-            background-color: blue;
-        }
-
-        #fin-juego{
-            display: none;
-        }
-    </style>
 </head>
 <body>
 
-<div id="fin-juego">
-    <p class="display-1">Fin del juego! Tardaste <strong><!-- --></strong> turnos en terminar.</p>
+<div id="fin-juego"> 
+    ¡You won! It took you <strong><!-- --></strong> times to finish.
 </div>
 
 <div id="tablero">
